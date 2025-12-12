@@ -39,16 +39,16 @@ Run the project with Poetry:
 
 ```bash
 # Default executor (main)
-poetry run python -m voice
+poetry run python -m text-to-speach
 
 # Use stream executor
-poetry run python -m voice --executor stream
+poetry run python -m text-to-speach --executor stream
 
 # Use stream_memory executor
-poetry run python -m voice --executor stream_memory
+poetry run python -m text-to-speach --executor stream_memory
 
 # View available options
-poetry run python -m voice --help
+poetry run python -m text-to-speach --help
 ```
 
 ## Executors
@@ -66,7 +66,7 @@ Asynchronous streaming synthesis with in-memory playback. Synthesizes text sampl
 
 ```
 piper-sample/
-├── voice/
+├── text-to-speach/
 │   ├── __main__.py        # Entry point with executor selection
 │   ├── main.py            # Synchronous TTS synthesis
 │   ├── stream.py          # Async streaming with file-based playback
