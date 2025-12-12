@@ -7,7 +7,7 @@ def main():
     )
     parser.add_argument(
         "--executor",
-        choices=["main", "stream", "stream_memory"],
+        choices=["main", "stream", "stream_memory", "stream_cli"],
         default="main",
         help="Choose which executor to run (default: main)"
     )
@@ -23,6 +23,9 @@ def main():
     elif args.executor == "stream_memory":
         from . import stream_memory
         stream_memory.run()
+    elif args.executor == "stream_cli":
+        from . import stream_cli
+        stream_cli.run()
 
 if __name__ == "__main__":
     main()
