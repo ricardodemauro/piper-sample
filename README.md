@@ -16,6 +16,10 @@ A Python project demonstrating text-to-speech synthesis using [Piper TTS](https:
 - Python 3.10 or higher
 - [Poetry](https://python-poetry.org/docs/#installation) for dependency management
 
+### References
+
+- https://github.com/OHF-Voice/piper1-gpl
+
 ### Setup
 
 1. Install project dependencies using Poetry:
