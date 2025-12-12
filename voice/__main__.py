@@ -1,5 +1,28 @@
-from main import run
-from stream import run
+import sys
+import argparse
 
-#run()
-run()
+def main():
+    parser = argparse.ArgumentParser(
+        description="Piper TTS executor - switch between different synthesis modes"
+    )
+    parser.add_argument(
+        "--executor",
+        choices=["main", "stream", "stream_memory"],
+        default="main",
+        help="Choose which executor to run (default: main)"
+    )
+    
+    args = parser.parse_args()
+    
+    if args.executor == "main":
+        from . import main as main_module
+        main_module.run()
+    elif args.executor == "stream":
+        from . import stream
+        stream.run()
+    elif args.executor == "stream_memory":
+        from . import stream_memory
+        stream_memory.run()
+
+if __name__ == "__main__":
+    main()

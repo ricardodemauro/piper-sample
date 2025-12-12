@@ -1,4 +1,5 @@
 import wave
+from pathlib import Path
 from piper import PiperVoice, SynthesisConfig
 
 def run():
@@ -11,7 +12,8 @@ I use this recipe regularly when I'm baking cupcakes or cakes. It's also been us
 
 If you ask me, this is the most delicious cake recipe you can make. So it's high time to share it with you!"""
 
-    voice = PiperVoice.load("/home/radmin/projects/piper-sample/en_US-lessac-medium.onnx")
+    model_path = Path(__file__).resolve().parents[1] / "en_US-lessac-medium.onnx"
+    voice = PiperVoice.load(str(model_path))
 
     syn_config = SynthesisConfig(
         volume=0.5,  # half as loud
